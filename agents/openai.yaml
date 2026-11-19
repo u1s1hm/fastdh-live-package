@@ -1,0 +1,6 @@
+interface:
+  display_name: "FastDH 直播内容与上传包"
+  short_description: "先引导确认直播内容与互动，再制作上传文档并维护中英文双向同步"
+  default_prompt: "使用 $fastdh-live-package 检查我提供的素材和文档，先引导我确认直播内容、观众互动和停留理由，再确认提纲并生成或补齐上传包及中文译本。"
+policy:
+  allow_implicit_invocation: true
