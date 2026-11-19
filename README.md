@@ -24,13 +24,13 @@
 ```text
 请使用 skill-installer 安装 https://github.com/u1s1hm/fastdh-live-package
 仓库根目录就是技能目录，安装名称为 fastdh-live-package。
-请固定到 v0.1.1；若已安装，先检查本地修改，再说明更新差异。
+请固定到 v0.2.0；若已安装，先检查本地修改，再说明更新差异。
 ```
 
 若直接使用 Codex 自带的安装脚本，其参数为：
 
 ```bash
-python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.1.1
+python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.2.0
 ```
 
 将脚本路径替换为所在环境的真实路径。安装器默认放入 `$CODEX_HOME/skills`（未设置时为 `~/.codex/skills`）；安装后在下一轮对话调用。具体环境以自带安装器为准。
@@ -123,6 +123,17 @@ python scripts/script_index.py "/absolute/path/中文译本/LiveScript.md"
 ```
 
 工具只读输入，以 JSON 输出非空行范围与错误，不修改文件。退出码 `0` 表示格式检查通过，`1` 表示脚本结构错误，`2` 表示文件读取错误。配置说明也占非空行，但不能包含在口播范围内。完整支持格式见 [检查说明](references/review.md)。通过检查不代表平台实际播放已验证。
+
+## 制作完成前会检查什么
+
+除文件数量与行号外，v0.2.0 增加逐项验收：
+
+- 对照素材证据、Introduction 和前后口播，核验动作及音频描述；抽帧不等于完整观看或听取。
+- 对照互动邀请、观众输入和实际反馈，明确所需台词、主题与状态从哪里进入主播或后台配置。
+- 迁移时保留原方案的角色辨识度和有效信息；未核验曲名等记录为待确认，而非静默丢弃。
+- 检查各段是否有新的内容或体验，双语是否包含相同的来源、说明和确认状态。
+
+编排索引与媒体映射仍不上传。依赖它们的台词或话题必须明确转入上传文档或已核验的后台配置入口；没有确认入口时，该部分保持待核验。结构检查通过不代表内容、配置或实际播放全部通过。
 
 ## 版本与升级
 
