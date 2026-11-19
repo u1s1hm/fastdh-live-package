@@ -52,6 +52,8 @@ description: 为 FastDH 直播间规划、生成、补齐或修改基于现有�
 
 读取 [deliverables.md](references/deliverables.md) 和 [updates.md](references/updates.md)。按规定结构直接写入指定目录；中文放在“中文译本”子目录。不额外产出 README、报告、JSON、历史副本或绑定数据库。
 
+按 deliverables.md 的别名规则校验资源别名，以映射表关联原文件名，不要求重命名本地视频。互动窗口可复用已有 LIPSYNC 底板或使用独立互动底板，明确实际引用，不根据前缀推断媒体类别。
+
 素材分为 LIPSYNC 底板、离线视频。使用已有稳定别名及模板编号；新增编号不重排旧资源。引导确认 Introduction 的画面与用途，不编造未观察的动作或剧情。
 
 每个固定离线视频前后有相应口播，提前写在 LiveScript 中。互动邀请、参与方式和自然承接也预写；互动自身反馈按确认体验选择视频／语音／文字组合，不假定每次互动必有额外语音。按正常流程创作，视频失败兜底由 FastDH 负责。

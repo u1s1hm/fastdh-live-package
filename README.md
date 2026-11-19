@@ -24,13 +24,13 @@
 ```text
 请使用 skill-installer 安装 https://github.com/u1s1hm/fastdh-live-package
 仓库根目录就是技能目录，安装名称为 fastdh-live-package。
-请固定到 v0.1.0；若已安装，先检查本地修改，再说明更新差异。
+请固定到 v0.1.1；若已安装，先检查本地修改，再说明更新差异。
 ```
 
 若直接使用 Codex 自带的安装脚本，其参数为：
 
 ```bash
-python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.1.0
+python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.1.1
 ```
 
 将脚本路径替换为所在环境的真实路径。安装器默认放入 `$CODEX_HOME/skills`（未设置时为 `~/.codex/skills`）；安装后在下一轮对话调用。具体环境以自带安装器为准。
@@ -106,6 +106,12 @@ N 为本次管理的视频数量，包含 LIPSYNC 底板。每种语言为 N+5 �
 | `Media_Resources_and_Pending_Checks.md` | 媒体映射、互动约定和未决项 | 否，内部检查与配置参考 |
 
 中文是审核译本，不作为另一套英语播出配置上传。具体格式见 [文件职责](references/deliverables.md)。本仓库的 README、CHANGELOG 和 VERSION 属于技能发布资料，不会加入直播上传包。
+
+## 媒体别名建议
+
+保留本地视频原文件名，使用媒体映射表关联 FastDH 别名。别名限 3–32 个字符，仅小写字母、数字、下划线，字母开头、字母或数字结尾，且项目内唯一。
+
+新别名建议统一使用 `clip_01`（离线视频）、`lip_01`（LIPSYNC 底板）、`int_01`（独立互动底板）。已有合规别名可保留。互动窗口复用 LIPSYNC 底板时沿用原别名，无需复制资源；前缀仅表示用途，不决定平台媒体类别。详见 [别名规则](references/deliverables.md#别名与互动底板)。
 
 ## 单独使用行号工具
 
