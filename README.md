@@ -24,13 +24,13 @@
 ```text
 请使用 skill-installer 安装 https://github.com/u1s1hm/fastdh-live-package
 仓库根目录就是技能目录，安装名称为 fastdh-live-package。
-请固定到 v0.2.0；若已安装，先检查本地修改，再说明更新差异。
+请固定到 v0.2.1；若已安装，先检查本地修改，再说明更新差异。
 ```
 
 若直接使用 Codex 自带的安装脚本，其参数为：
 
 ```bash
-python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.2.0
+python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.2.1
 ```
 
 将脚本路径替换为所在环境的真实路径。安装器默认放入 `$CODEX_HOME/skills`（未设置时为 `~/.codex/skills`）；安装后在下一轮对话调用。具体环境以自带安装器为准。
@@ -134,6 +134,12 @@ python scripts/script_index.py "/absolute/path/中文译本/LiveScript.md"
 - 检查各段是否有新的内容或体验，双语是否包含相同的来源、说明和确认状态。
 
 编排索引与媒体映射仍不上传。依赖它们的台词或话题必须明确转入上传文档或已核验的后台配置入口；没有确认入口时，该部分保持待核验。结构检查通过不代表内容、配置或实际播放全部通过。
+
+### 固定主线与条件口播的顺序
+
+v0.2.1 要求 LiveScript 的固定主线按节目时间顺序排列。新增 U12 可以插在 U05 前：ID 是引用标识，不必重编号；新增引歌不能为保留行号而放在告别之后。调整后中英文分别重算行号，并更新索引及后台引用。条件口播可存放在主线之后，由索引明确标记为非主线连续播放；循环和条件调用单独核验。
+
+行号工具只检查脚本结构。Agent 还需对照编排索引核查主线范围依次向后、没有遗漏或无说明的重复，并确保告别仍是主线末段。
 
 ## 版本与升级
 
