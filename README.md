@@ -24,13 +24,13 @@
 ```text
 请使用 skill-installer 安装 https://github.com/u1s1hm/fastdh-live-package
 仓库根目录就是技能目录，安装名称为 fastdh-live-package。
-请固定到 v0.2.1；若已安装，先检查本地修改，再说明更新差异。
+请固定到 v0.3.0；若已安装，先检查本地修改，再说明更新差异。
 ```
 
 若直接使用 Codex 自带的安装脚本，其参数为：
 
 ```bash
-python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.2.1
+python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.3.0
 ```
 
 将脚本路径替换为所在环境的真实路径。安装器默认放入 `$CODEX_HOME/skills`（未设置时为 `~/.codex/skills`）；安装后在下一轮对话调用。具体环境以自带安装器为准。
@@ -86,11 +86,12 @@ python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --
 
 ## 实际使用流程
 
-1. Agent 盘点素材与文档，区分已知信息和缺口。
-2. 每轮提出少量问题，优先使用宿主问答控件，否则给编号选项。
-3. 新建、迁移或实质重构时展示提纲；即使完整委托，也先确认提纲。
-4. 获准后生成文档及中文译本，检查内容、资源覆盖、双语含义和行号。
-5. 使用者按内部检查文件，在 FastDH 中配置并核验实际播放。
+1. Agent 先询问本场第一意见；若已说明方向，简要复述并询问是否补充。只有明确要求使用技能默认建议才跳过。
+2. Agent 盘点素材与文档，区分已知信息和缺口。
+3. 每轮提出少量问题，优先使用宿主问答控件，否则给编号选项。
+4. 新建、迁移或实质重构时展示提纲；即使完整委托，也先确认提纲。
+5. 获准后生成文档及中文译本，检查内容、资源覆盖、双语含义和行号。
+6. 上传侧按字段指南将内容映射到一个 Agent 和一个独立 Live Scenario，分板块保存并逐组回读；生成技能不操作线上配置。
 
 ## 会生成哪些文件
 
@@ -138,6 +139,10 @@ python scripts/script_index.py "/absolute/path/中文译本/LiveScript.md"
 ### 固定主线与条件口播的顺序
 
 v0.2.1 要求 LiveScript 的固定主线按节目时间顺序排列。新增 U12 可以插在 U05 前：ID 是引用标识，不必重编号；新增引歌不能为保留行号而放在告别之后。调整后中英文分别重算行号，并更新索引及后台引用。条件口播可存放在主线之后，由索引明确标记为非主线连续播放；循环和条件调用单独核验。
+
+v0.3.0 增加本场入口先询问、平台字段单一指南和上传回读验收。评论选评队列、互动点播窗口、弹幕规则是三个独立配置；样例数量与别名不构成默认。手册明示项、运营口述、案例观察和实播证据须分开标记。语音情感、精确匹配等没有来源的字段保留待核。
+
+生成侧应给出编排顺序、口播行范围、互动规则预期、默认/继承/清空/设置状态及可验证的预期值。上传侧记录实际 Agent/Scenario ID、每个保存分组的结果、版本冲突或部分保存、重新加载后的回读结果；之后另记 Brain 实播事件、动作和播放结束事实。保存成功、静态 JSON 或预览不能替代实播验证。
 
 行号工具只检查脚本结构。Agent 还需对照编排索引核查主线范围依次向后、没有遗漏或无说明的重复，并确保告别仍是主线末段。
 
