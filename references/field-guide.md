@@ -35,7 +35,7 @@
 | interaction | return | rule | Resume previous content, Stay active, Finish | ask per scene; fixed content normally resumes | manual 11.5 | confirmed | return path |
 | interaction | failure | rule | Abort remaining steps, Continue optional steps | preserve selected platform behavior | manual 11.5 | confirmed | saved choice; runtime unverified |
 | interaction | cooldown | rule | 0-86400 s; Per session, Per viewer | ask per rule | manual 11.5 | confirmed | rule ID and value |
-| interaction | expiry | rule | empty or 1-86400 s | ask when timing is intended | manual 11.5 | confirmed | saved value |
+| interaction | expiry | rule | 1-86400 s; empty semantics/default needs readback | ask when timing is intended | manual 11.5 | confirmed | saved value |
 | validation | save state | configuration groups | identity, runtime, speech_language, audience; partial save possible | require all intended groups read back | manual 17.2-17.4 | confirmed | saved/partial groups |
 | validation | runtime result | production test | Brain session, events, actions, actual IDs | separate readback from real playback | manual 14, 17.4 | confirmed | runtime evidence |
 
@@ -60,3 +60,5 @@
 严格整条匹配、返场、精确代码、窗口内恢复、接收/播放次数等能力只在当前控制台回读或实播证据存在时写入定稿。历史上看见 `111` 的子串命中时，可以把 `1111`、`hi111` 作为反例记录，但不能把它当作平台全局规则或自动生成默认。
 
 运营观察表明现有底板首尾帧相同，Brain 视频结束有利于自然切换；指定时长或脚本结束可能出现跳帧。长口播可能引发重复动作，短口播可能静默。因此先按自然语义和情感转折分段，再按情感换底板；用实测音频或语言/语速区间估算，不用固定时长、行数或占比硬切。以上是运营观察，不是平台字段默认；静态配置、预览和保存成功都不能证明实播。
+
+逐条互动交接字段以 [互动交接两表](interaction-tables.md) 为唯一填写规范；此处为概览，不另维护第二份规则值。

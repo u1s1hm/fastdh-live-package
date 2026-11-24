@@ -58,6 +58,8 @@ description: 为 FastDH 直播间规划、生成、补齐或修改基于现有�
 
 ## 4. 制作与双语维护
 
+生成或修改互动时必须读取 [互动交接两表](references/interaction-tables.md)：在现有媒体映射文件中交付完整逐规则、逐动作表及双语版本，按本场选择普通回复、模板切换或其它已确认动作；核对 §11 的匹配与字段适用性，不能把模板切换写成原视频点播。
+
 读取 [deliverables.md](references/deliverables.md) 和 [updates.md](references/updates.md)。按规定结构直接写入指定目录；中文放在“中文译本”子目录。不额外产出 README、报告、JSON、历史副本或绑定数据库。
 
 按 deliverables.md 的别名规则校验资源别名，以映射表关联原文件名，不要求重命名本地视频。互动窗口可复用已有 LIPSYNC 底板或使用独立互动底板，明确实际引用，不根据前缀推断媒体类别。

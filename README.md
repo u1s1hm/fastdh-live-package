@@ -24,13 +24,13 @@
 ```text
 请使用 skill-installer 安装 https://github.com/u1s1hm/fastdh-live-package
 仓库根目录就是技能目录，安装名称为 fastdh-live-package。
-请固定到 v0.3.0；若已安装，先检查本地修改，再说明更新差异。
+请固定到 v0.3.1；若已安装，先检查本地修改，再说明更新差异。
 ```
 
 若直接使用 Codex 自带的安装脚本，其参数为：
 
 ```bash
-python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.3.0
+python /absolute/path/to/skill-installer/scripts/install-skill-from-github.py --repo u1s1hm/fastdh-live-package --path . --name fastdh-live-package --ref v0.3.1
 ```
 
 将脚本路径替换为所在环境的真实路径。安装器默认放入 `$CODEX_HOME/skills`（未设置时为 `~/.codex/skills`）；安装后在下一轮对话调用。具体环境以自带安装器为准。
